@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿﻿using System;
+using System.CollectionsCollections.Generic;
+using System.ComponentModelComponentModel;
 using System.Diagnostics.Metrics;
+using System.IO.Pipes;
 using System.Runtime.InteropServices;
 
 public class Program
@@ -9,47 +11,47 @@ public class Program
     {
         Program program = new Program();
 
-        //program.Task_1_1();
-        //program.Task_1_2();
-        //program.Task_1_3();
-        //program.Task_1_4(0.9);
-        //program.Task_1_5(0, 2);
-        //program.Task_1_6(4);
-        //program.Task_1_7();
-        //program.Task_1_8();
-        //program.Task_1_9();
-        //program.Task_1_10();
+ program.Task_1_1();
+ program.Task_1_2();
+ program.Task_1_3();
+ program.Task_1_4(0.9);
+ program.Task_1_5(0, 2);
+ program.Task_1_6(4);
+ program.Task_1_7();
+ program.Task_1_8();
+ program.Task_1_9();
+ program.Task_1_10();
         //program.Task_1_11();
-        //program.Task_1_12(0.9);
-        //program.Task_1_13(-1.5);
-        //program.Task_1_14();
-        //program.Task_1_15();
-        //program.Task_1_16();
-        //program.Task_1_17(10);
-        //program.Task_1_18(24);
+ program.Task_1_12(0.9);
+ program.Task_1_13(-1.5);
+ program.Task_1_14();
+ program.Task_1_15();
+ program.Task_1_16();
+ program.Task_1_17(10);
+ program.Task_1_18(24);
         //program.Task_2_1(0);
-        //program.Task_2_2();
+ program.Task_2_2();
         //program.Task_2_3(8, 2, 0);
         //program.Task_2_4(0.8);
         //program.Task_2_5(11, 5);
-        //program.Task_2_6();
+ program.Task_2_6();
         //program.Task_2_7a();
         //program.Task_2_7b();
-        //program.Task_2_7c();
+ program.Task_2_7c();
         //program.Task_2_8();
         //program.Task_2_9();
-        //program.Task_2_10();
+ program.Task_2_10();
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
-        //program.Task_3_6(0.1);
+ program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
         //program.Task_3_8(0.1);
         //program.Task_3_9(0.1);
     }
-    #region Level 1
+ #region Level 1
     public int Task_1_1()
     {
         int answer = 0;
@@ -61,7 +63,7 @@ public class Program
 
         return answer;
     }
-     public double Task_1_2()
+    public double Task_1_2()
     {
         double answer = 0;
 
@@ -610,9 +612,32 @@ public class Program
     }
     public (double, double) Task_3_6(double x)
     {
-        double S = 0, y = 0;
+        double S = 0, y, a, e = 0.0001, denom, numer = 1, minus = -1;
 
         // code here
+        int i = 1;
+        for (int j = 1; ; j++)
+        {
+            numer = numer * x;
+            if (j == 2*i+1)
+            {
+                minus *= -1;
+                denom = 4 * i * i - 1;
+                a = minus * (numer / denom);
+                if (Math.Abs(a) < e) break;
+                S = S + a;
+                i++;
+            }
+
+        }
+        y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);
+        Console.WriteLine(S);
+
+
+
+
+
+
 
         // end
 
