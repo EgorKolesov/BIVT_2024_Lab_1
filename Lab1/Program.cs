@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.CollectionsCollections.Generic;
 using System.ComponentModelComponentModel;
 using System.Diagnostics.Metrics;
@@ -46,7 +46,7 @@ public class Program
         //program.Task_3_3(0.1);
         //program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
- program.Task_3_6(0.1);
+        //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
         //program.Task_3_8(0.1);
         //program.Task_3_9(0.1);
@@ -615,30 +615,7 @@ public class Program
         double S = 0, y, a, e = 0.0001, denom, numer = 1, minus = -1;
 
         // code here
-        int i = 1;
-        for (int j = 1; ; j++)
-        {
-            numer = numer * x;
-            if (j == 2*i+1)
-            {
-                minus *= -1;
-                denom = 4 * i * i - 1;
-                a = minus * (numer / denom);
-                if (Math.Abs(a) < e) break;
-                S = S + a;
-                i++;
-            }
-
-        }
-        y = (((1 + x * x) * Math.Atan(x)) / 2) - (x / 2);
-        Console.WriteLine(S);
-
-
-
-
-
-
-
+      
         // end
 
         return (S, y);
