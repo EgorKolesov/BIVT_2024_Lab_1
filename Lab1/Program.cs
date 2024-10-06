@@ -44,7 +44,7 @@ public class Program
         //program.Task_3_1(0.1);
         //program.Task_3_2(0.1);
         //program.Task_3_3(0.1);
-        //program.Task_3_4(0.1);
+program.Task_3_4(0.1);
         //program.Task_3_5(double.Pi/5);
         //program.Task_3_6(0.1);
         //program.Task_3_7(0.1);
@@ -595,7 +595,18 @@ public class Program
         double S = 0, y = 0;
 
         // code here
-
+        S = 1;
+        double f = 1, p = x * x, k = 1;
+        for (double i = 1; Math.Abs(k) >= 0.0001; i++)
+        {
+            f *= i;
+            k = (2 * i + 1) * p / f;
+            S += k;
+            p *= x * x;
+        }
+        S -= k;
+        y = (1 + 2 * x * x) * Math.Exp(x * x);
+        Console.WriteLine($"{S}, {y}");
         // end
 
         return (S, y);
